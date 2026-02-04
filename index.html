@@ -4,121 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pennington Woodworks | Custom Craftsmanship</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --bg: #121212;
-            --card: #1e1e1e;
-            --text: #ffffff;
-            --accent: #d4af37; 
-            --gray: #888;
-        }
-
-        body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); margin: 0; line-height: 1.6; }
-        
-        /* Navigation */
-        nav { display: flex; justify-content: space-between; padding: 20px 5%; background: rgba(0,0,0,0.8); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
-        .logo { font-weight: 800; font-size: 1.5rem; color: var(--accent); text-transform: uppercase; }
-        .nav-links a { color: var(--text); text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--accent); }
-
-        /* Hero Section */
-        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/img/fb_img_4.jpg'); background-size: cover; background-position: center; padding: 0 20px; }
-        .hero h1 { font-size: 4rem; margin: 0; text-transform: uppercase; letter-spacing: 4px; }
-        .hero p { font-size: 1.2rem; color: var(--accent); font-weight: 500; margin-bottom: 30px; }
-        .cta { padding: 15px 40px; background: var(--accent); color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; text-transform: uppercase; transition: 0.3s; }
-        .cta:hover { background: #fff; }
-
-        /* Services Section */
-        .section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-size: 2.5rem; margin: 0; }
-        .section-title div { width: 60px; height: 4px; background: var(--accent); margin: 10px auto; }
-
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .service-card { background: var(--card); padding: 40px; border-radius: 10px; border: 1px solid #333; transition: 0.3s; }
-        .service-card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        .service-card h3 { color: var(--accent); margin-top: 0; }
-
-        /* Gallery Grid */
-        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
-        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: 0.3s; filter: grayscale(30%); }
-        .gallery img:hover { filter: grayscale(0%); transform: scale(1.03); }
-
-        /* Footer */
-        footer { background: #000; padding: 60px 5%; border-top: 1px solid #333; text-align: center; }
-        .footer-info { margin-bottom: 30px; }
-        .footer-info p { margin: 5px 0; color: var(--gray); }
-
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } }
+        .hero-gradient { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/img/fb_img_4.jpg'); background-size: cover; background-position: center; }
+        .gallery-img { aspect-ratio: 1/1; object-fit: cover; transition: transform 0.4s; }
+        .gallery-img:hover { transform: scale(1.05); }
     </style>
 </head>
-<body>
+<body class="bg-[#0a0a0a] text-gray-100 font-sans">
 
-<nav>
-    <div class="logo">Pennington Woodworks</div>
-    <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#work">Our Work</a>
-        <a href="#contact">Contact</a>
-    </div>
-</nav>
-
-<section class="hero">
-    <h1>Quality Custom Woodwork</h1>
-    <p>Handcrafted in Hot Springs, Arkansas</p>
-    <a href="#contact" class="cta">Request a Quote</a>
-</section>
-
-<section id="services" class="section">
-    <div class="section-title">
-        <h2>What We Do</h2>
-        <div></div>
-    </div>
-    <div class="services">
-        <div class="service-card">
-            <h3>Custom Flag Carvings</h3>
-            <p>Hand-carved American flags and custom insignia. Perfect for gifts, memorials, and office decor.</p>
+    <nav class="flex justify-between items-center px-8 py-6 bg-black/90 sticky top-0 z-50 border-b border-yellow-700/30">
+        <div class="text-2xl font-black tracking-tighter text-yellow-600">PENNINGTON <span class="text-white">WOODWORKS</span></div>
+        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-bold">
+            <a href="#work" class="hover:text-yellow-600 transition">Portfolio</a>
+            <a href="#services" class="hover:text-yellow-600 transition">Services</a>
+            <a href="#contact" class="hover:text-yellow-600 transition">Quote</a>
         </div>
-        <div class="service-card">
-            <h3>Outdoor Living</h3>
-            <p>High-quality cedar planters, custom benches, and garden structures built to withstand the elements.</p>
+    </nav>
+
+    <section class="hero-gradient h-[80vh] flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-5xl md:text-7xl font-black uppercase mb-4 italic tracking-tighter">Hardwood. Heart. Heritage.</h1>
+        <p class="text-xl md:text-2xl text-yellow-500 font-light mb-8 max-w-2xl">Custom flags, furniture, and outdoor living built in Hot Springs, Arkansas.</p>
+        <a href="#work" class="bg-yellow-600 hover:bg-yellow-500 text-black px-10 py-4 font-black uppercase text-sm tracking-widest transition">View the Collection</a>
+    </section>
+
+    <section id="services" class="py-20 px-8 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-12">
+            <div class="border-t-2 border-yellow-600 pt-6">
+                <h3 class="text-xl font-bold uppercase mb-4">Patriotic Art</h3>
+                <p class="text-gray-400">Hand-carved American flags and custom service insignia. Precision work for those who serve.</p>
+            </div>
+            <div class="border-t-2 border-yellow-600 pt-6">
+                <h3 class="text-xl font-bold uppercase mb-4">Cedar Structures</h3>
+                <p class="text-gray-400">Custom planters, benches, and outdoor accents designed to weather the Arkansas elements.</p>
+            </div>
+            <div class="border-t-2 border-yellow-600 pt-6">
+                <h3 class="text-xl font-bold uppercase mb-4">Custom Builds</h3>
+                <p class="text-gray-400">From live-edge centerpieces to heirloom furniture. If you can dream it in wood, we can build it.</p>
+            </div>
         </div>
-        <div class="service-card">
-            <h3>Home Decor</h3>
-            <p>One-of-a-kind centerpieces, wall art, and custom furniture tailored to your home's aesthetic.</p>
+    </section>
+
+    <section id="work" class="px-4 pb-20">
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2" id="grid">
+            </div>
+    </section>
+
+    <footer id="contact" class="bg-black py-20 px-8 text-center border-t border-yellow-700/20">
+        <h2 class="text-3xl font-black uppercase mb-6">Start a Project</h2>
+        <p class="text-gray-500 mb-10">Currently accepting custom commissions in the Hot Springs area.</p>
+        <div class="inline-block border-2 border-yellow-600 p-8">
+            <p class="text-sm uppercase tracking-widest text-yellow-600 mb-2 font-bold">Inquiries</p>
+            <p class="text-2xl font-mono">WOODWORK@PENNINGTON.DEV</p>
         </div>
-    </div>
-</section>
+        <p class="mt-20 text-[10px] text-gray-700 tracking-widest uppercase">&copy; 2026 Pennington Woodworks</p>
+    </footer>
 
-<section id="work" class="section">
-    <div class="section-title">
-        <h2>Project Gallery</h2>
-        <div></div>
-    </div>
-    <div class="gallery" id="image-grid">
-        </div>
-</section>
-
-<footer id="contact">
-    <div class="footer-info">
-        <h3>Start Your Project</h3>
-        <p>Andrew R. Pennington</p>
-        <p>Hot Springs, Arkansas</p>
-    </div>
-    <p style="font-size: 0.8rem; color: #444;">&copy; 2026 Pennington Woodworks. All Rights Reserved.</p>
-</footer>
-
-<script>
-    const grid = document.getElementById('image-grid');
-    // Start from 4 as per your asset list, up to 76
-    for (let i = 4; i <= 76; i++) {
-        const img = document.createElement('img');
-        img.src = `assets/img/fb_img_${i}.jpg`;
-        img.alt = "Custom Woodwork Project";
-        img.loading = "lazy";
-        grid.appendChild(img);
-    }
-</script>
-
+    <script>
+        const grid = document.getElementById('grid');
+        // Loops through your saved assets (4-76)
+        for (let i = 4; i <= 76; i++) {
+            const container = document.createElement('div');
+            container.className = "overflow-hidden bg-zinc-900";
+            const img = document.createElement('img');
+            img.src = `assets/img/fb_img_${i}.jpg`;
+            img.loading = "lazy";
+            img.className = "gallery-img w-full h-full cursor-crosshair grayscale hover:grayscale-0 transition duration-700";
+            container.appendChild(img);
+            grid.appendChild(container);
+        }
+    </script>
 </body>
 </html>
