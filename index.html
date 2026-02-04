@@ -16,7 +16,14 @@
         <h1 class="text-5xl font-extrabold mb-4">Custom Craftsmanship</h1>
         <p class="text-xl text-stone-600">Hand-built furniture and cabinetry by Derric Pennington.</p>
     </header>
-
+<section class="max-w-6xl mx-auto py-12 px-6">
+    <h2 class="text-3xl font-bold mb-8 text-stone-800">Portfolio</h2>
+    <div id="gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="animate-pulse bg-stone-300 h-72 rounded-lg"></div>
+        <div class="animate-pulse bg-stone-300 h-72 rounded-lg"></div>
+        <div class="animate-pulse bg-stone-300 h-72 rounded-lg"></div>
+    </div>
+</section>
     <section id="contact" class="max-w-lg mx-auto py-12 px-6 bg-white rounded-lg shadow">
         <h2 class="text-2xl font-bold mb-6">Start Your Project</h2>
         <form action="https://your-worker-name.your-subdomain.workers.dev" method="POST" class="flex flex-col gap-4">
@@ -26,5 +33,38 @@
             <button type="submit" class="bg-orange-700 text-white font-bold py-3 rounded hover:bg-orange-800">Send Request</button>
         </form>
     </section>
+    <script>
+    async function loadFacebookGallery() {
+        // REPLACE THIS URL with your actual Cloudflare Worker URL
+        const WORKER_URL = "https://woodwork-form-handler.your-subdomain.workers.dev";
+        const gallery = document.getElementById('gallery');
+
+        try {
+            const response = await fetch(WORKER_URL);
+            const imageUrls = await response.json();
+
+            // Clear any loading placeholders
+            gallery.innerHTML = '';
+
+            imageUrls.forEach(src => {
+                const card = `
+                    <div class="overflow-hidden rounded-lg shadow-lg bg-white border border-stone-200">
+                        <img src="${src}" 
+                             alt="Derric Pennington Woodworking Project" 
+                             class="w-full h-72 object-cover hover:scale-105 transition-transform duration-300"
+                             onerror="this.parentElement.style.display='none'">
+                    </div>
+                `;
+                gallery.innerHTML += card;
+            });
+        } catch (error) {
+            console.error("Gallery failed to load:", error);
+            gallery.innerHTML = '<p class="text-center col-span-full text-stone-500">View more projects on our Facebook page.</p>';
+        }
+    }
+
+    // Fire it off
+    loadFacebookGallery();
+</script>
 </body>
 </html>
