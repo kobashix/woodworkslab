@@ -6,128 +6,117 @@
     <title>Pennington Woodworks | Custom Craftsmanship</title>
     <style>
         :root {
-            --bg: #0f0f0f;
-            --card-bg: #1a1a1a;
-            --text: #ececec;
-            --accent: #d4af37; /* Gold accent */
+            --bg: #121212;
+            --card: #1e1e1e;
+            --text: #ffffff;
+            --accent: #d4af37; 
+            --gray: #888;
         }
 
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
-            padding: 0;
-        }
+        body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); margin: 0; line-height: 1.6; }
+        
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; padding: 20px 5%; background: rgba(0,0,0,0.8); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
+        .logo { font-weight: 800; font-size: 1.5rem; color: var(--accent); text-transform: uppercase; }
+        .nav-links a { color: var(--text); text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
 
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/img/fb_img_4.jpg');
-            background-size: cover;
-            background-position: center;
-            border-bottom: 3px solid var(--accent);
-        }
+        /* Hero Section */
+        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/img/fb_img_4.jpg'); background-size: cover; background-position: center; padding: 0 20px; }
+        .hero h1 { font-size: 4rem; margin: 0; text-transform: uppercase; letter-spacing: 4px; }
+        .hero p { font-size: 1.2rem; color: var(--accent); font-weight: 500; margin-bottom: 30px; }
+        .cta { padding: 15px 40px; background: var(--accent); color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; text-transform: uppercase; transition: 0.3s; }
+        .cta:hover { background: #fff; }
 
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+        /* Services Section */
+        .section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; margin: 0; }
+        .section-title div { width: 60px; height: 4px; background: var(--accent); margin: 10px auto; }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            grid-auto-rows: 300px;
-            gap: 15px;
-            padding: 20px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: var(--card); padding: 40px; border-radius: 10px; border: 1px solid #333; transition: 0.3s; }
+        .service-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .service-card h3 { color: var(--accent); margin-top: 0; }
 
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            background: var(--card-bg);
-            cursor: pointer;
-            border: 1px solid #333;
-        }
+        /* Gallery Grid */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: 0.3s; filter: grayscale(30%); }
+        .gallery img:hover { filter: grayscale(0%); transform: scale(1.03); }
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
+        /* Footer */
+        footer { background: #000; padding: 60px 5%; border-top: 1px solid #333; text-align: center; }
+        .footer-info { margin-bottom: 30px; }
+        .footer-info p { margin: 5px 0; color: var(--gray); }
 
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        /* Lightbox Logic */
-        #lightbox {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
-            justify-content: center;
-            align-items: center;
-        }
-
-        #lightbox img {
-            max-width: 90%;
-            max-height: 80%;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-            border: 2px solid var(--accent);
-        }
-
-        .close {
-            position: absolute;
-            top: 20px; right: 30px;
-            font-size: 40px; color: white; cursor: pointer;
-        }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Pennington Woodworks</h1>
-    <p>Handcrafted in Hot Springs, Arkansas</p>
-</header>
-
-<div class="gallery" id="gallery">
+<nav>
+    <div class="logo">Pennington Woodworks</div>
+    <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#work">Our Work</a>
+        <a href="#contact">Contact</a>
     </div>
+</nav>
 
-<div id="lightbox" onclick="this.style.display='none'">
-    <span class="close">&times;</span>
-    <img id="lightbox-img" src="">
-</div>
+<section class="hero">
+    <h1>Quality Custom Woodwork</h1>
+    <p>Handcrafted in Hot Springs, Arkansas</p>
+    <a href="#contact" class="cta">Request a Quote</a>
+</section>
+
+<section id="services" class="section">
+    <div class="section-title">
+        <h2>What We Do</h2>
+        <div></div>
+    </div>
+    <div class="services">
+        <div class="service-card">
+            <h3>Custom Flag Carvings</h3>
+            <p>Hand-carved American flags and custom insignia. Perfect for gifts, memorials, and office decor.</p>
+        </div>
+        <div class="service-card">
+            <h3>Outdoor Living</h3>
+            <p>High-quality cedar planters, custom benches, and garden structures built to withstand the elements.</p>
+        </div>
+        <div class="service-card">
+            <h3>Home Decor</h3>
+            <p>One-of-a-kind centerpieces, wall art, and custom furniture tailored to your home's aesthetic.</p>
+        </div>
+    </div>
+</section>
+
+<section id="work" class="section">
+    <div class="section-title">
+        <h2>Project Gallery</h2>
+        <div></div>
+    </div>
+    <div class="gallery" id="image-grid">
+        </div>
+</section>
+
+<footer id="contact">
+    <div class="footer-info">
+        <h3>Start Your Project</h3>
+        <p>Andrew R. Pennington</p>
+        <p>Hot Springs, Arkansas</p>
+    </div>
+    <p style="font-size: 0.8rem; color: #444;">&copy; 2026 Pennington Woodworks. All Rights Reserved.</p>
+</footer>
 
 <script>
-    // Configuration: adjust the range based on your assets folder
-    const totalImages = 76; 
-    const gallery = document.getElementById('gallery');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-
-    for (let i = 4; i <= totalImages; i++) {
-        const item = document.createElement('div');
-        item.className = 'gallery-item';
-        
+    const grid = document.getElementById('image-grid');
+    // Start from 4 as per your asset list, up to 76
+    for (let i = 4; i <= 76; i++) {
         const img = document.createElement('img');
         img.src = `assets/img/fb_img_${i}.jpg`;
-        img.loading = "lazy"; // Performance boost
-        
-        img.onclick = () => {
-            lightboxImg.src = img.src;
-            lightbox.style.display = 'flex';
-        };
-
-        item.appendChild(img);
-        gallery.appendChild(item);
+        img.alt = "Custom Woodwork Project";
+        img.loading = "lazy";
+        grid.appendChild(img);
     }
 </script>
 
