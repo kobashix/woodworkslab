@@ -1,107 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Woodworks Lab | Derric Pennington</title>
+    <title>Woodworks Lab | Artisanal Craft</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
-  #gallery img {
-    filter: grayscale(20%);
-    transition: all 0.3s ease;
-  }
-  #gallery img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.02);
-  }
-</style>
+        body { font-family: 'Inter', sans-serif; background-color: #0c0a09; }
+        h1, h2 { font-family: 'Playfair Display', serif; }
+        .gallery-item { transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .gallery-item:hover { transform: translateY(-8px); }
+        /* Hide scrollbar but keep functionality */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
 </head>
-<body class="bg-stone-100 text-stone-900 font-sans">
-    <nav class="p-6 bg-white shadow-sm flex justify-between">
-        <span class="font-bold text-xl">Woodworks Lab</span>
-        <a href="#contact" class="bg-stone-800 text-white px-4 py-2 rounded">Get a Quote</a>
+<body class="text-stone-300">
+
+    <nav class="fixed w-full z-50 p-6 lg:p-10 flex justify-between items-center mix-blend-difference">
+        <span class="text-xl font-bold tracking-tighter uppercase text-white">Woodworks Lab</span>
+        <a href="#contact" class="text-xs tracking-widest uppercase border-b border-stone-500 pb-1 hover:text-white hover:border-white transition">Inquire</a>
     </nav>
 
-    <header class="py-20 text-center">
-        <h1 class="text-5xl font-extrabold mb-4">Custom Craftsmanship</h1>
-        <p class="text-xl text-stone-600">Hand-built furniture and cabinetry by Derric Pennington.</p>
+    <header class="relative h-[80vh] flex items-center px-6 lg:px-20 border-b border-stone-800">
+        <div class="max-w-4xl">
+            <h1 class="text-6xl md:text-8xl text-white mb-6 italic leading-tight">Hand-built to <br>outlast trends.</h1>
+            <p class="text-lg md:text-xl text-stone-500 max-w-lg font-light leading-relaxed">
+                Derric Pennington transforms raw Arkansas timber into bespoke furniture and architectural cabinetry.
+            </p>
+        </div>
+        <div class="absolute bottom-10 right-10 hidden md:block">
+            <p class="text-[10px] tracking-[0.5em] uppercase text-stone-600 vertical-text">Hot Springs, Arkansas</p>
+        </div>
     </header>
-<section class="max-w-6xl mx-auto py-12 px-6">
-    <h2 class="text-3xl font-bold mb-8 text-stone-800">Portfolio</h2>
-    <div id="gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="animate-pulse bg-stone-300 h-72 rounded-lg"></div>
-        <div class="animate-pulse bg-stone-300 h-72 rounded-lg"></div>
-        <div class="animate-pulse bg-stone-300 h-72 rounded-lg"></div>
-    </div>
-</section>
-    <section id="contact" class="max-w-lg mx-auto py-12 px-6 bg-white rounded-lg shadow">
-        <h2 class="text-2xl font-bold mb-6">Start Your Project</h2>
-        <form action="https://woodworks-form-handler.andrewpennington.workers.dev/" method="POST" class="flex flex-col gap-4">
-            <input type="text" name="name" placeholder="Your Name" required class="border p-2 rounded">
-            <input type="email" name="email" placeholder="Email" required class="border p-2 rounded">
-            <textarea name="message" placeholder="What are we building?" rows="4" class="border p-2 rounded"></textarea>
-            <button type="submit" class="bg-orange-700 text-white font-bold py-3 rounded hover:bg-orange-800">Send Request</button>
-        </form>
+
+    <section class="py-24 px-6 lg:px-20">
+        <div class="flex justify-between items-end mb-12">
+            <h2 class="text-4xl text-white">The Collection</h2>
+            <p class="text-stone-600 text-sm hidden md:block">Latest Work via Facebook</p>
+        </div>
+        
+        <div id="gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="h-[450px] bg-stone-900 rounded-sm animate-pulse"></div>
+            <div class="h-[450px] bg-stone-900 rounded-sm animate-pulse"></div>
+            <div class="h-[450px] bg-stone-900 rounded-sm animate-pulse"></div>
+        </div>
     </section>
+
+    <section id="contact" class="bg-[#141210] py-32 px-6 lg:px-20">
+        <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-20">
+            <div>
+                <h2 class="text-5xl text-white mb-6">Let's build <br>something.</h2>
+                <p class="text-stone-500 mb-10 leading-relaxed font-light">
+                    Currently accepting commissions for custom tables, mantles, and cabinetry. Delivery available across Central Arkansas.
+                </p>
+                <div class="text-[10px] tracking-[0.3em] uppercase text-stone-600">
+                    <p class="mb-2">Administered by Pennington CPA</p>
+                    <p>&copy; 2026 Woodworks Lab</p>
+                </div>
+            </div>
+
+            <form action="https://woodworks-form-handler.andrewpennington.workers.dev/" method="POST" class="flex flex-col gap-8">
+                <input type="text" name="name" placeholder="Full Name" required 
+                    class="bg-transparent border-b border-stone-800 py-4 focus:outline-none focus:border-white transition">
+                <input type="email" name="email" placeholder="Email Address" required 
+                    class="bg-transparent border-b border-stone-800 py-4 focus:outline-none focus:border-white transition">
+                <textarea name="message" placeholder="Project Description" rows="3" required 
+                    class="bg-transparent border-b border-stone-800 py-4 focus:outline-none focus:border-white transition resize-none"></textarea>
+                <button type="submit" 
+                    class="bg-stone-200 text-black py-5 uppercase text-xs tracking-widest font-bold hover:bg-white transition">
+                    Send Request
+                </button>
+            </form>
+        </div>
+    </section>
+
     <script>
-async function loadGallery() {
-    const WORKER_URL = "https://woodwork-scraper.andrewpennington.workers.dev/";
-    const gallery = document.getElementById('gallery');
+        const RSS_URL = "https://rss.app/feeds/v1.1/T9HteWVJVYqEuvKV.json";
 
-    try {
-        const response = await fetch(WORKER_URL);
-        const images = await response.json();
-
-        if (images.length > 0) {
-            gallery.innerHTML = ''; 
-            images.forEach(src => {
-                gallery.innerHTML += `
-                    <div class="overflow-hidden rounded-lg shadow-lg bg-white border border-stone-200">
-                        <img src="${src}" class="w-full h-72 object-cover hover:scale-105 transition duration-300" 
-                             onerror="this.src='https://via.placeholder.com/400x300?text=View+on+Facebook'">
-                    </div>`;
-            });
-        } else {
-            throw new Error("No images found");
+        async function loadAutoGallery() {
+            const gallery = document.getElementById('gallery');
+            try {
+                const response = await fetch(RSS_URL);
+                const data = await response.json();
+                
+                gallery.innerHTML = '';
+                // Filter to ensure we only get items with images
+                const projects = data.items.filter(item => item.image || item.enclosure?.url).slice(0, 9);
+                
+                projects.forEach(item => {
+                    const img = item.image || item.enclosure?.url;
+                    gallery.innerHTML += `
+                        <div class="gallery-item group cursor-pointer">
+                            <div class="overflow-hidden bg-stone-900 aspect-[4/5]">
+                                <img src="${img}" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition duration-700">
+                            </div>
+                            <div class="mt-4 flex justify-between items-start">
+                                <p class="text-xs uppercase tracking-widest text-stone-500 leading-tight max-w-[80%]">
+                                    ${item.title.substring(0, 60)}...
+                                </p>
+                                <span class="text-stone-700 text-[10px]">01</span>
+                            </div>
+                        </div>`;
+                });
+            } catch (e) {
+                console.error("Gallery Sync Failed", e);
+                gallery.innerHTML = `<p class="col-span-full text-stone-700 italic">Portfolio offline. Check Facebook.</p>`;
+            }
         }
-    } catch (e) {
-        // Fallback: If scraping fails, show a "Visit Facebook" card
-        gallery.innerHTML = `
-            <div class="col-span-full text-center py-10 bg-stone-200 rounded-lg">
-                <p class="text-stone-600 mb-4">Our portfolio is currently updating.</p>
-                <a href="https://www.facebook.com/PenningtonWoodworks" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded font-bold">View Gallery on Facebook</a>
-            </div>`;
-    }
-}
-loadGallery();
-</script>
-<script>
-  // Replace with your RSS.app feed URL (JSON version is easiest)
-  const RSS_URL = "https://rss.app/feeds/v1.1/T9HteWVJVYqEuvKV.json";
-
-  async function loadAutoGallery() {
-    const gallery = document.getElementById('gallery');
-    try {
-      const response = await fetch(RSS_URL);
-      const data = await response.json();
-      
-      gallery.innerHTML = '';
-      data.items.slice(0, 9).forEach(item => {
-        // RSS.app pulls the image from the FB post automatically
-        const img = item.image || item.enclosure?.url;
-        if (img) {
-          gallery.innerHTML += `
-            <div class="rounded-lg shadow overflow-hidden bg-white">
-              <img src="${img}" class="w-full h-64 object-cover">
-              <div class="p-3 text-xs text-stone-500">${item.title.substring(0, 50)}...</div>
-            </div>`;
-        }
-      });
-    } catch (e) {
-      console.error("Feed failed", e);
-    }
-  }
-  loadAutoGallery();
-</script>
+        loadAutoGallery();
+    </script>
 </body>
 </html>
