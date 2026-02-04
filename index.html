@@ -44,37 +44,36 @@
         </form>
     </section>
     <script>
-    async function loadFacebookGallery() {
-        // REPLACE THIS URL with your actual Cloudflare Worker URL
-        const WORKER_URL = "https://woodwork-scraper.andrewpennington.workers.dev/";
-        const gallery = document.getElementById('gallery');
+async function loadGallery() {
+    const WORKER_URL = "https://woodwork-scraper.andrewpennington.workers.dev/";
+    const gallery = document.getElementById('gallery');
 
-        try {
-            const response = await fetch(WORKER_URL);
-            const imageUrls = await response.json();
+    try {
+        const response = await fetch(WORKER_URL);
+        const images = await response.json();
 
-            // Clear any loading placeholders
-            gallery.innerHTML = '';
-
-            imageUrls.forEach(src => {
-                const card = `
+        if (images.length > 0) {
+            gallery.innerHTML = ''; 
+            images.forEach(src => {
+                gallery.innerHTML += `
                     <div class="overflow-hidden rounded-lg shadow-lg bg-white border border-stone-200">
-                        <img src="${src}" 
-                             alt="Derric Pennington Woodworking Project" 
-                             class="w-full h-72 object-cover hover:scale-105 transition-transform duration-300"
-                             onerror="this.parentElement.style.display='none'">
-                    </div>
-                `;
-                gallery.innerHTML += card;
+                        <img src="${src}" class="w-full h-72 object-cover hover:scale-105 transition duration-300" 
+                             onerror="this.src='https://via.placeholder.com/400x300?text=View+on+Facebook'">
+                    </div>`;
             });
-        } catch (error) {
-            console.error("Gallery failed to load:", error);
-            gallery.innerHTML = '<p class="text-center col-span-full text-stone-500">View more projects on our Facebook page.</p>';
+        } else {
+            throw new Error("No images found");
         }
+    } catch (e) {
+        // Fallback: If scraping fails, show a "Visit Facebook" card
+        gallery.innerHTML = `
+            <div class="col-span-full text-center py-10 bg-stone-200 rounded-lg">
+                <p class="text-stone-600 mb-4">Our portfolio is currently updating.</p>
+                <a href="https://www.facebook.com/PenningtonWoodworks" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded font-bold">View Gallery on Facebook</a>
+            </div>`;
     }
-
-    // Fire it off
-    loadFacebookGallery();
+}
+loadGallery();
 </script>
 </body>
 </html>
