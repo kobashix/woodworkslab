@@ -3,122 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pennington Woodworks | Custom Signs & Outdoor Decor</title>
+    <title>Pennington Woodworks | Custom CNC Signs & Outdoor Decor</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0c0a09; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        .product-card { transition: all 0.5s ease; border: 1px solid #1c1917; }
-        .product-card:hover { border-color: #44403c; background: #141210; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
+        body { font-family: 'Inter', sans-serif; background-color: #0c0a09; color: #a8a29e; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: #fafaf9; }
+        .nav-glass { background: rgba(12, 10, 9, 0.9); backdrop-filter: blur(10px); }
+        .gallery-item { aspect-ratio: 1; overflow: hidden; background: #1c1917; border: 1px solid #292524; }
+        .gallery-item img, .gallery-item video { width: 100%; h-full: 100%; object-fit: cover; transition: 0.5s; }
+        .gallery-item:hover img { transform: scale(1.05); filter: grayscale(0); }
     </style>
 </head>
-<body class="text-stone-300">
+<body>
 
-    <nav class="fixed w-full z-50 px-6 py-6 lg:px-20 flex justify-between items-center mix-blend-difference">
-        <span class="text-2xl font-bold tracking-tighter uppercase text-white">Pennington Woodworks</span>
-        <div class="flex gap-8 items-center">
-            <a href="#collection" class="text-[10px] tracking-widest uppercase hover:text-white transition">Portfolio</a>
-            <a href="#contact" class="bg-white text-black px-5 py-2 text-[10px] tracking-widest uppercase font-bold hover:bg-stone-200 transition">Inquire</a>
+    <nav class="fixed w-full z-50 px-6 py-4 lg:px-20 flex justify-between items-center nav-glass border-b border-white/5">
+        <div class="flex flex-col">
+            <span class="text-xl font-bold tracking-tighter uppercase text-white">Pennington Woodworks</span>
+            <span class="text-[9px] tracking-[0.4em] text-stone-500 uppercase">Hot Springs, AR</span>
+        </div>
+        <div class="hidden md:flex gap-10 text-[10px] uppercase tracking-[0.2em] font-semibold">
+            <a href="#portfolio" class="hover:text-white transition">Full Portfolio</a>
+            <a href="#services" class="hover:text-white transition">What We Build</a>
+            <a href="#contact" class="text-white border-b border-white pb-1 hover:border-stone-500 transition">Get a Quote</a>
         </div>
     </nav>
 
-    <header class="relative h-[90vh] flex items-center px-6 lg:px-20">
-        <div class="max-w-5xl">
-            <h1 class="text-7xl md:text-9xl text-white mb-6 italic leading-none tracking-tight">Built to <br>Endure.</h1>
-            <p class="text-xl md:text-2xl text-stone-500 max-w-xl font-light leading-relaxed">
-                Derric Pennington crafts custom CNC-engraved signs, memorial plaques, and durable outdoor garden structures in Hot Springs, Arkansas.
+    <header class="relative h-[80vh] flex items-center px-6 lg:px-20 border-b border-stone-900">
+        <div class="max-w-4xl z-10">
+            <h1 class="text-7xl md:text-8xl mb-6 italic leading-tight">Hand-crafted <br>in Arkansas.</h1>
+            <p class="text-lg md:text-xl text-stone-500 max-w-lg font-light leading-relaxed">
+                From CNC-carved signage to durable cedar garden structures, we build custom pieces that outlast trends.
             </p>
         </div>
     </header>
 
-    <section class="py-24 px-6 lg:px-20 border-t border-stone-900">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="product-card p-8 rounded-sm">
-                <span class="text-stone-600 text-[10px] uppercase tracking-widest">Custom Carving</span>
-                <h3 class="text-3xl text-white mt-2 mb-4 italic">Signs & Plaques</h3>
-                <p class="text-sm text-stone-500 font-light leading-relaxed">CNC-precision engraving for business signage, home decor, and personalized memorial plaques.</p>
-            </div>
-            
-            <div class="product-card p-8 rounded-sm">
-                <span class="text-stone-600 text-[10px] uppercase tracking-widest">Cedar & Pine</span>
-                <h3 class="text-3xl text-white mt-2 mb-4 italic">Outdoor Living</h3>
-                <p class="text-sm text-stone-500 font-light leading-relaxed">Custom planter beds, potting benches, and outdoor furniture built specifically for the Arkansas climate.</p>
-            </div>
-
-            <div class="product-card p-8 rounded-sm">
-                <span class="text-stone-600 text-[10px] uppercase tracking-widest">Bespoke Builds</span>
-                <h3 class="text-3xl text-white mt-2 mb-4 italic">Home Accents</h3>
-                <p class="text-sm text-stone-500 font-light leading-relaxed">Shadow boxes, flags, and unique wooden gifts tailored to your specific project needs.</p>
-            </div>
+    <section id="services" class="py-24 px-6 lg:px-20 grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="space-y-4">
+            <h3 class="text-3xl italic">Signs & Plaques</h3>
+            <p class="text-sm text-stone-500">Custom carved business signs, memorial plaques, and personalized home decor using precision CNC technology.</p>
+        </div>
+        <div class="space-y-4">
+            <h3 class="text-3xl italic">Outdoor Living</h3>
+            <p class="text-sm text-stone-500">Custom cedar planter beds, potting benches, and outdoor furniture built for the elements.</p>
+        </div>
+        <div class="space-y-4">
+            <h3 class="text-3xl italic">Specialty Woodwork</h3>
+            <p class="text-sm text-stone-500">Custom flags, shadow boxes, and one-of-a-kind wooden items built to your specifications.</p>
         </div>
     </section>
 
-    <section id="collection" class="py-24 px-6 lg:px-20">
-        <div class="flex justify-between items-baseline mb-12">
-            <h2 class="text-4xl text-white italic">Recent Work</h2>
-            <p class="text-[10px] tracking-widest uppercase text-stone-600">Syncing via Facebook</p>
+    <section id="portfolio" class="py-24 px-6 lg:px-20 bg-black">
+        <div class="flex justify-between items-end mb-12">
+            <h2 class="text-5xl italic text-white">The Gallery</h2>
+            <p class="text-stone-600 text-xs tracking-widest uppercase">Auto-Scraped from Facebook</p>
         </div>
-        <div id="gallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div id="media-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
             </div>
     </section>
 
-    <section id="contact" class="bg-[#0f0d0c] py-32 px-6 lg:px-20 border-t border-stone-900">
+    <section id="contact" class="py-32 px-6 lg:px-20 bg-[#0f0d0c] border-t border-stone-900">
         <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-20">
             <div>
-                <h2 class="text-5xl text-white mb-6 italic">Start your project.</h2>
-                <p class="text-stone-500 mb-8 leading-relaxed font-light">
-                    Accepting commissions for custom signage and outdoor garden structures. Serving Hot Springs and Central Arkansas.
-                </p>
-                <div class="text-[10px] tracking-widest uppercase text-stone-700 space-y-2">
-                    <p>Hot Springs, Arkansas</p>
-                    <p>© 2026 Pennington Woodworks</p>
-                </div>
+                <h2 class="text-5xl text-white mb-6 italic">Let's build <br>something.</h2>
+                <p class="text-stone-500 mb-8 leading-relaxed font-light">Accepting commissions for custom signs and outdoor structures across Central Arkansas.</p>
             </div>
-
-            <form action="https://woodworks-form-handler.andrewpennington.workers.dev/" method="POST" class="flex flex-col gap-6">
-                <input type="text" name="name" placeholder="Full Name" required 
-                    class="bg-transparent border-b border-stone-800 py-4 focus:outline-none focus:border-white transition">
-                <input type="email" name="email" placeholder="Email Address" required 
-                    class="bg-transparent border-b border-stone-800 py-4 focus:outline-none focus:border-white transition">
-                <select name="type" class="bg-transparent border-b border-stone-800 py-4 focus:outline-none focus:border-white transition text-stone-500 appearance-none">
-                    <option value="Sign">Custom Sign / Plaque</option>
-                    <option value="Planter">Planter Bed / Outdoor</option>
-                    <option value="Other">Other Custom Request</option>
-                </select>
-                <textarea name="message" placeholder="Project details (Dimensions, material, etc.)" rows="3" required 
-                    class="bg-transparent border-b border-stone-800 py-4 focus:outline-none focus:border-white transition resize-none"></textarea>
-                <button type="submit" 
-                    class="bg-stone-100 text-black py-5 uppercase text-[10px] tracking-widest font-bold hover:bg-white transition">
-                    Submit Inquiry
-                </button>
+            <form action="https://woodworks-form-handler.andrewpennington.workers.dev/" method="POST" class="flex flex-col gap-8">
+                <input type="text" name="name" placeholder="Name" required class="bg-transparent border-b border-stone-800 py-4 focus:outline-none focus:border-white transition">
+                <input type="email" name="email" placeholder="Email" required class="bg-transparent border-b border-stone-800 py-4 focus:outline-none focus:border-white transition">
+                <textarea name="message" placeholder="Project Details" rows="3" required class="bg-transparent border-b border-stone-800 py-4 focus:outline-none focus:border-white transition resize-none"></textarea>
+                <button type="submit" class="bg-white text-black py-5 uppercase text-xs tracking-[0.3em] font-bold hover:bg-stone-200 transition">Send Inquiry</button>
             </form>
         </div>
     </section>
 
     <script>
-        const RSS_URL = "https://rss.app/feeds/v1.1/T9HteWVJVYqEuvKV.json";
-        async function loadGallery() {
-            const gallery = document.getElementById('gallery');
+        async function fetchMedia() {
+            const grid = document.getElementById('media-grid');
             try {
-                const res = await fetch(RSS_URL);
-                const data = await res.json();
-                gallery.innerHTML = '';
-                data.items.filter(i => i.image || i.enclosure?.url).slice(0, 12).forEach(item => {
-                    const img = item.image || item.enclosure?.url;
-                    gallery.innerHTML += `
-                        <div class="group overflow-hidden bg-stone-900 aspect-square border border-stone-900 hover:border-stone-700 transition">
-                            <img src="${img}" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition duration-700">
-                        </div>`;
-                });
-            } catch (e) { console.error("Gallery Sync Error"); }
+                const res = await fetch('https://woodworks-form-handler.andrewpennington.workers.dev/api/media');
+                const items = await res.json();
+                grid.innerHTML = items.map(url => `
+                    <div class="gallery-item group">
+                        <img src="${url}" loading="lazy" class="grayscale group-hover:grayscale-0">
+                    </div>
+                `).join('');
+            } catch (e) { console.error("Media Load Failed"); }
         }
-        loadGallery();
-        if (new URLSearchParams(window.location.search).get('status') === 'success') {
-            alert("Inquiry Sent! Derric will be in touch shortly.");
-            window.history.replaceState({}, '', window.location.pathname);
-        }
+        fetchMedia();
     </script>
 </body>
 </html>
