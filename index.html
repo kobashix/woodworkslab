@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woodworks Lab | Derric Pennington</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-stone-100 text-stone-900 font-sans">
+    <nav class="p-6 bg-white shadow-sm flex justify-between">
+        <span class="font-bold text-xl">Woodworks Lab</span>
+        <a href="#contact" class="bg-stone-800 text-white px-4 py-2 rounded">Get a Quote</a>
+    </nav>
+
+    <header class="py-20 text-center">
+        <h1 class="text-5xl font-extrabold mb-4">Custom Craftsmanship</h1>
+        <p class="text-xl text-stone-600">Hand-built furniture and cabinetry by Derric Pennington.</p>
+    </header>
+
+    <section id="contact" class="max-w-lg mx-auto py-12 px-6 bg-white rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-6">Start Your Project</h2>
+        <form action="https://your-worker-name.your-subdomain.workers.dev" method="POST" class="flex flex-col gap-4">
+            <input type="text" name="name" placeholder="Your Name" required class="border p-2 rounded">
+            <input type="email" name="email" placeholder="Email" required class="border p-2 rounded">
+            <textarea name="message" placeholder="What are we building?" rows="4" class="border p-2 rounded"></textarea>
+            <button type="submit" class="bg-orange-700 text-white font-bold py-3 rounded hover:bg-orange-800">Send Request</button>
+        </form>
+    </section>
+</body>
+</html>
