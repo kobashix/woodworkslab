@@ -3,72 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Woodworks Lab | Artisanal Craft</title>
+    <title>Pennington Woodworks | Custom Signs & Outdoor Decor</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0c0a09; }
-        h1, h2 { font-family: 'Playfair Display', serif; }
-        .gallery-item { transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-        .gallery-item:hover { transform: translateY(-8px); }
-        /* Hide scrollbar but keep functionality */
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .product-card { transition: all 0.5s ease; border: 1px solid #1c1917; }
+        .product-card:hover { border-color: #44403c; background: #141210; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
 <body class="text-stone-300">
 
-    <nav class="fixed w-full z-50 p-6 lg:p-10 flex justify-between items-center mix-blend-difference">
-        <span class="text-xl font-bold tracking-tighter uppercase text-white">Woodworks Lab</span>
-        <a href="#contact" class="text-xs tracking-widest uppercase border-b border-stone-500 pb-1 hover:text-white hover:border-white transition">Inquire</a>
+    <nav class="fixed w-full z-50 px-6 py-6 lg:px-20 flex justify-between items-center mix-blend-difference">
+        <span class="text-2xl font-bold tracking-tighter uppercase text-white">Pennington Woodworks</span>
+        <div class="flex gap-8 items-center">
+            <a href="#collection" class="text-[10px] tracking-widest uppercase hover:text-white transition">Portfolio</a>
+            <a href="#contact" class="bg-white text-black px-5 py-2 text-[10px] tracking-widest uppercase font-bold hover:bg-stone-200 transition">Inquire</a>
+        </div>
     </nav>
 
-    <header class="relative h-[80vh] flex items-center px-6 lg:px-20 border-b border-stone-800">
-        <div class="max-w-4xl">
-            <h1 class="text-6xl md:text-8xl text-white mb-6 italic leading-tight">Hand-built to <br>outlast trends.</h1>
-            <p class="text-lg md:text-xl text-stone-500 max-w-lg font-light leading-relaxed">
-                Derric Pennington transforms raw Arkansas timber into bespoke furniture and architectural cabinetry.
+    <header class="relative h-[90vh] flex items-center px-6 lg:px-20">
+        <div class="max-w-5xl">
+            <h1 class="text-7xl md:text-9xl text-white mb-6 italic leading-none tracking-tight">Built to <br>Endure.</h1>
+            <p class="text-xl md:text-2xl text-stone-500 max-w-xl font-light leading-relaxed">
+                Derric Pennington crafts custom CNC-engraved signs, memorial plaques, and durable outdoor garden structures in Hot Springs, Arkansas.
             </p>
-        </div>
-        <div class="absolute bottom-10 right-10 hidden md:block">
-            <p class="text-[10px] tracking-[0.5em] uppercase text-stone-600 vertical-text">Hot Springs, Arkansas</p>
         </div>
     </header>
 
-    <section class="py-24 px-6 lg:px-20">
-        <div class="flex justify-between items-end mb-12">
-            <h2 class="text-4xl text-white">The Collection</h2>
-            <p class="text-stone-600 text-sm hidden md:block">Latest Work via Facebook</p>
-        </div>
-        
-        <div id="gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div class="h-[450px] bg-stone-900 rounded-sm animate-pulse"></div>
-            <div class="h-[450px] bg-stone-900 rounded-sm animate-pulse"></div>
-            <div class="h-[450px] bg-stone-900 rounded-sm animate-pulse"></div>
+    <section class="py-24 px-6 lg:px-20 border-t border-stone-900">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="product-card p-8 rounded-sm">
+                <span class="text-stone-600 text-[10px] uppercase tracking-widest">Custom Carving</span>
+                <h3 class="text-3xl text-white mt-2 mb-4 italic">Signs & Plaques</h3>
+                <p class="text-sm text-stone-500 font-light leading-relaxed">CNC-precision engraving for business signage, home decor, and personalized memorial plaques.</p>
+            </div>
+            
+            <div class="product-card p-8 rounded-sm">
+                <span class="text-stone-600 text-[10px] uppercase tracking-widest">Cedar & Pine</span>
+                <h3 class="text-3xl text-white mt-2 mb-4 italic">Outdoor Living</h3>
+                <p class="text-sm text-stone-500 font-light leading-relaxed">Custom planter beds, potting benches, and outdoor furniture built specifically for the Arkansas climate.</p>
+            </div>
+
+            <div class="product-card p-8 rounded-sm">
+                <span class="text-stone-600 text-[10px] uppercase tracking-widest">Bespoke Builds</span>
+                <h3 class="text-3xl text-white mt-2 mb-4 italic">Home Accents</h3>
+                <p class="text-sm text-stone-500 font-light leading-relaxed">Shadow boxes, flags, and unique wooden gifts tailored to your specific project needs.</p>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="bg-[#141210] py-32 px-6 lg:px-20">
+    <section id="collection" class="py-24 px-6 lg:px-20">
+        <div class="flex justify-between items-baseline mb-12">
+            <h2 class="text-4xl text-white italic">Recent Work</h2>
+            <p class="text-[10px] tracking-widest uppercase text-stone-600">Syncing via Facebook</p>
+        </div>
+        <div id="gallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            </div>
+    </section>
+
+    <section id="contact" class="bg-[#0f0d0c] py-32 px-6 lg:px-20 border-t border-stone-900">
         <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-20">
             <div>
-                <h2 class="text-5xl text-white mb-6">Let's build <br>something.</h2>
-                <p class="text-stone-500 mb-10 leading-relaxed font-light">
-                    Currently accepting commissions for custom tables, mantles, and cabinetry. Delivery available across Central Arkansas.
+                <h2 class="text-5xl text-white mb-6 italic">Start your project.</h2>
+                <p class="text-stone-500 mb-8 leading-relaxed font-light">
+                    Accepting commissions for custom signage and outdoor garden structures. Serving Hot Springs and Central Arkansas.
                 </p>
-                <div class="text-[10px] tracking-[0.3em] uppercase text-stone-600">
-                    <p>&copy; 2026 Woodworks Lab</p>
+                <div class="text-[10px] tracking-widest uppercase text-stone-700 space-y-2">
+                    <p>Hot Springs, Arkansas</p>
+                    <p>© 2026 Pennington Woodworks</p>
                 </div>
             </div>
 
-            <form action="https://woodworks-form-handler.andrewpennington.workers.dev/" method="POST" class="flex flex-col gap-8">
+            <form action="https://woodworks-form-handler.andrewpennington.workers.dev/" method="POST" class="flex flex-col gap-6">
                 <input type="text" name="name" placeholder="Full Name" required 
                     class="bg-transparent border-b border-stone-800 py-4 focus:outline-none focus:border-white transition">
                 <input type="email" name="email" placeholder="Email Address" required 
                     class="bg-transparent border-b border-stone-800 py-4 focus:outline-none focus:border-white transition">
-                <textarea name="message" placeholder="Project Description" rows="3" required 
+                <select name="type" class="bg-transparent border-b border-stone-800 py-4 focus:outline-none focus:border-white transition text-stone-500 appearance-none">
+                    <option value="Sign">Custom Sign / Plaque</option>
+                    <option value="Planter">Planter Bed / Outdoor</option>
+                    <option value="Other">Other Custom Request</option>
+                </select>
+                <textarea name="message" placeholder="Project details (Dimensions, material, etc.)" rows="3" required 
                     class="bg-transparent border-b border-stone-800 py-4 focus:outline-none focus:border-white transition resize-none"></textarea>
                 <button type="submit" 
-                    class="bg-stone-200 text-black py-5 uppercase text-xs tracking-widest font-bold hover:bg-white transition">
-                    Send Request
+                    class="bg-stone-100 text-black py-5 uppercase text-[10px] tracking-widest font-bold hover:bg-white transition">
+                    Submit Inquiry
                 </button>
             </form>
         </div>
@@ -76,45 +99,26 @@
 
     <script>
         const RSS_URL = "https://rss.app/feeds/v1.1/T9HteWVJVYqEuvKV.json";
-
-        async function loadAutoGallery() {
+        async function loadGallery() {
             const gallery = document.getElementById('gallery');
             try {
-                const response = await fetch(RSS_URL);
-                const data = await response.json();
-                
+                const res = await fetch(RSS_URL);
+                const data = await res.json();
                 gallery.innerHTML = '';
-                // Filter to ensure we only get items with images
-                const projects = data.items.filter(item => item.image || item.enclosure?.url).slice(0, 9);
-                
-                projects.forEach(item => {
+                data.items.filter(i => i.image || i.enclosure?.url).slice(0, 12).forEach(item => {
                     const img = item.image || item.enclosure?.url;
                     gallery.innerHTML += `
-                        <div class="gallery-item group cursor-pointer">
-                            <div class="overflow-hidden bg-stone-900 aspect-[4/5]">
-                                <img src="${img}" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition duration-700">
-                            </div>
-                            <div class="mt-4 flex justify-between items-start">
-                                <p class="text-xs uppercase tracking-widest text-stone-500 leading-tight max-w-[80%]">
-                                    ${item.title.substring(0, 60)}...
-                                </p>
-                                <span class="text-stone-700 text-[10px]">01</span>
-                            </div>
+                        <div class="group overflow-hidden bg-stone-900 aspect-square border border-stone-900 hover:border-stone-700 transition">
+                            <img src="${img}" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition duration-700">
                         </div>`;
                 });
-            } catch (e) {
-                console.error("Gallery Sync Failed", e);
-                gallery.innerHTML = `<p class="col-span-full text-stone-700 italic">Portfolio offline. Check Facebook.</p>`;
-            }
+            } catch (e) { console.error("Gallery Sync Error"); }
         }
-        loadAutoGallery();
-        // Check for success message on page load
-const urlParams = new URLSearchParams(window.location.search);
-if (urlParams.get('status') === 'success') {
-    alert("Inquiry Sent! Derric will be in touch shortly.");
-    // Clean the URL so the alert doesn't pop up again if they refresh
-    window.history.replaceState({}, document.title, window.location.pathname);
-}
+        loadGallery();
+        if (new URLSearchParams(window.location.search).get('status') === 'success') {
+            alert("Inquiry Sent! Derric will be in touch shortly.");
+            window.history.replaceState({}, '', window.location.pathname);
+        }
     </script>
 </body>
 </html>
