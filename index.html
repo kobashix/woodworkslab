@@ -55,7 +55,6 @@
                     Currently accepting commissions for custom tables, mantles, and cabinetry. Delivery available across Central Arkansas.
                 </p>
                 <div class="text-[10px] tracking-[0.3em] uppercase text-stone-600">
-                    <p class="mb-2">Administered by Pennington CPA</p>
                     <p>&copy; 2026 Woodworks Lab</p>
                 </div>
             </div>
@@ -109,6 +108,13 @@
             }
         }
         loadAutoGallery();
+        // Check for success message on page load
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('status') === 'success') {
+    alert("Inquiry Sent! Derric will be in touch shortly.");
+    // Clean the URL so the alert doesn't pop up again if they refresh
+    window.history.replaceState({}, document.title, window.location.pathname);
+}
     </script>
 </body>
 </html>
